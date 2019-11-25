@@ -5,6 +5,7 @@ import CardActionArea from '@material-ui/core/CardActionArea';
 import CardContent from '@material-ui/core/CardContent';
 import CardMedia from '@material-ui/core/CardMedia';
 import Typography from '@material-ui/core/Typography';
+import './HeroCard.css'
 
 const useStyles = makeStyles({
   media: {
@@ -17,15 +18,15 @@ export default function MediaCard(props) {
   const hero = props.hero
 
   return (
-    <Card>
+    <Card className="hero-card">
       <CardActionArea>
         <CardMedia
           className={classes.media}
           image={hero.images.lg}
-          title="Contemplative Reptile"
+          title={hero.name}
         />
-        <CardContent>
-          <Typography gutterBottom variant="h5" component="h2">
+        <CardContent className="bg-surface">
+          <Typography>
             {hero.name}
           </Typography>
         </CardContent>

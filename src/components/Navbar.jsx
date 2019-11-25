@@ -9,9 +9,8 @@ export default function ButtonAppBar() {
     <div>
       <AppBar position="static">
         <Toolbar className="toolbar">
-          <Typography variant="h6">
-            SHIELD
-          </Typography>
+          <img className="logo" alt="shield-logo" src="https://vignette.wikia.nocookie.net/marvelcinematicuniverse/images/9/9b/S.H.I.E.L.D._logo_NEW.png/revision/latest/scale-to-width-down/310?cb=20190422151215"/>
+          <Typography>S.H.I.E.L.D.</Typography>
         </Toolbar>
       </AppBar>
     </div>

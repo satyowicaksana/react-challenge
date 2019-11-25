@@ -1,16 +1,24 @@
 :root {
   --background-color: #20222A;
-  --surface-color: #1C1C1C;
+  --surface-color: #282C33;
+  --primary-color: #61DAFB;
 }
 
 html, body {
-  background: var(--background-color)
+  background: var(--background-color);
+  color: var(--primary-color);
+  font-family: 'Odibee Sans', cursive !important;
 }
 
 .bg-standard {
-  background: var(--background-color)
+  background: var(--background-color);
 }
 
 .bg-surface {
-  background: var(--surface-color)
+  background: var(--surface-color);
+  color: var(--primary-color);
+}
+
+.t-primary {
+  color: var(--primary-color);
 }
