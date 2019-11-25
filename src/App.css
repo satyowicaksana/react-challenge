@@ -1,8 +1,16 @@
 :root {
+  --background-color: #20222A;
   --surface-color: #1C1C1C;
 }
 
 html, body {
-  background: rgb(32,32,32);
-  background: linear-gradient(90deg, rgba(32,32,32,1) 0%, rgba(31,31,31,1) 48%, rgba(17,17,17,1) 100%);
+  background: var(--background-color)
+}
+
+.bg-standard {
+  background: var(--background-color)
+}
+
+.bg-surface {
+  background: var(--surface-color)
 }
