@@ -2,10 +2,12 @@ import React, { useState, useEffect } from 'react';
 import Container from '@material-ui/core/Container'
 import Grid from '@material-ui/core/Grid'
 import HeroCard from '../components/HeroCard'
+import SearchForm from '../components/SearchForm'
 import './Home.css'
 
 const Home = () => {
   const [heroes, setHeroes] = useState([])
+  const [displayedHeroes, setDisplayedHeroes] = useState([])
 
   useEffect(() => {
     fetch('https://akabab.github.io/superhero-api/api/all.json')
@@ -18,10 +20,20 @@ const Home = () => {
           }
         })
         setHeroes(marvelHeroes)
-        console.log(marvelHeroes)
+        setDisplayedHeroes(marvelHeroes)
       })
       .catch(console.log)
   }, [])
+
+  const filterHeroes = (keyword) => {
+    let result = []
+    heroes.forEach(hero => {
+      if(hero.name.toLowerCase().includes(keyword.toLowerCase())) {
+        result.push(hero)
+      }
+    })
+    setDisplayedHeroes(result)
+  }
 
   return (
     <div>
@@ -31,10 +43,11 @@ const Home = () => {
           <hr></hr>
           DATABASE OF ENHANCED INDIVIDUALS
         </div>
+        <SearchForm filterHeroes={filterHeroes}></SearchForm>
         <div className="heroes-container">
         <Grid container spacing={3}>
           {
-            heroes.map(hero => (
+            displayedHeroes.map(hero => (
               <Grid key={hero.id} item md={2}>
                 <HeroCard hero={hero}></HeroCard>
               </Grid>
