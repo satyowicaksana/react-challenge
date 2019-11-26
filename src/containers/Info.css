@@ -1,0 +1,22 @@
+.info-banner {
+  background: blue;
+  height: 200px;
+  padding-top: 100px;
+  position: absolute;
+  width: 100%;
+}
+.info-content {
+  position: relative;
+  margin-top: 210px;
+}
+.info-hero-name {
+  font-size: 40px;
+  font-weight: bold;
+}
+.info-hero-full-name {
+  font-size: 20px;
+}
+.info-hero-card {
+  width: 200px !important;
+  margin-bottom: 20px;
+}

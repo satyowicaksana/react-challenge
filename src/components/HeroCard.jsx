@@ -18,7 +18,7 @@ const useStyles = makeStyles({
 
 export default function MediaCard(props) {
   const classes = useStyles();
-  const { hero } = props
+  const { hero, withImage } = props
   const history = useHistory()
 
   const toInfo = (slug) => {
@@ -34,11 +34,15 @@ export default function MediaCard(props) {
           image={hero.images.lg}
           title={hero.name}
         />
-        <CardContent className="bg-surface card-content">
+        {
+          !withImage && (
+          <CardContent className="bg-surface card-content">
           <Typography>
             {hero.name}
           </Typography>
-        </CardContent>
+          </CardContent>
+          )
+        }
       </CardActionArea>
     </Card>
   );
