@@ -44,17 +44,15 @@ const Home = () => {
           DATABASE OF ENHANCED INDIVIDUALS
         </div>
         <SearchForm filterHeroes={filterHeroes}></SearchForm>
-        <div className="heroes-container">
-        <Grid container spacing={3}>
+        <Grid className="heroes-container" container spacing={3}>
           {
             displayedHeroes.map(hero => (
-              <Grid key={hero.id} item md={2}>
+              <Grid key={hero.id} item lg={2} md={3} xs={6} >
                 <HeroCard hero={hero}></HeroCard>
               </Grid>
             ))
           }
         </Grid>
-        </div>
       </Container>
     </div>
   );

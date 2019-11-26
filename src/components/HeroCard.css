@@ -1,10 +1,16 @@
 .hero-card {
   clip-path: polygon(85% 0, 92% 6%, 100% 12%, 100% 68%, 100% 100%, 0 100%, 0% 80%, 0 0);
   font-size: 10px !important;
-  transition: transform 2s;
+  transition: transform .2s ease !important;
+  opacity: 0.9;
 }
 
 .hero-card:hover {
   color: var(--primary-color);
-  transform: scale(1.1); 
+  transform: scale(1.05);
+  opacity: 1;
+}
+
+.card-content {
+  border-top: solid 5px var(--primary-color);
 }
