@@ -4,7 +4,7 @@ import HeroCard from '../components/HeroCard'
 import InfoContent from '../components/InfoContent'
 import InfoBanner from '../components/InfoBanner'
 import { connect } from 'react-redux'
-import { setHero } from '../store/actions'
+import { fetchHero } from '../store/actions'
 
 import {
   withRouter
@@ -17,22 +17,19 @@ const mapStateToProps = (state /*, ownProps*/) => {
   }
 }
 
-const mapDispatchToProps = { setHero }
+const mapDispatchToProps = (dispatch) => {
+  return {
+    fetchHero(id) {
+      dispatch(fetchHero(id))
+    }
+  }
+}
 
 class Info extends Component {
   componentDidMount() {
     const { match } = this.props
     const id = match.params.slug.split('-')[0]
-    console.log(id)
-    fetch(`https://akabab.github.io/superhero-api/api/id/${id}.json`)
-      .then(result => result.json())
-      .then(result => {
-        this.props.setHero(result)
-        // bannerStyle.backgroundImage = this.state.hero.images.lg
-        // console.log(this.state.hero)
-        console.log(this.props.hero)
-      })
-      .catch(console.log)
+    this.props.fetchHero(id)
   }
   render() {
     let { hero } = this.props

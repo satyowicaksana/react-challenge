@@ -3,27 +3,18 @@ import Container from '@material-ui/core/Container'
 import Grid from '@material-ui/core/Grid'
 import HeroCard from '../components/HeroCard'
 import SearchForm from '../components/SearchForm'
+import { fetchHeroes } from '../store/actions'
+import { useDispatch, useSelector } from 'react-redux'
 import './Home.css'
 
 const Home = () => {
-  const [heroes, setHeroes] = useState([])
+  const heroes = useSelector(state => state.heroes)
   const [displayedHeroes, setDisplayedHeroes] = useState([])
+  const dispatch = useDispatch()
 
   useEffect(() => {
-    fetch('https://akabab.github.io/superhero-api/api/all.json')
-      .then(result => result.json())
-      .then(result => {
-        let marvelHeroes = []
-        result.forEach(hero => {
-          if(hero.biography.publisher === 'Marvel Comics') {
-            marvelHeroes.push(hero)
-          }
-        })
-        setHeroes(marvelHeroes)
-        setDisplayedHeroes(marvelHeroes)
-      })
-      .catch(console.log)
-  }, [])
+    dispatch(fetchHeroes())
+  }, [dispatch])
 
   const filterHeroes = (keyword) => {
     let result = []
@@ -46,7 +37,7 @@ const Home = () => {
         <SearchForm filterHeroes={filterHeroes}></SearchForm>
         <Grid className="heroes-container" container spacing={3}>
           {
-            displayedHeroes.map(hero => (
+            heroes.map(hero => (
               <Grid key={hero.id} item lg={2} md={3} xs={6} >
                 <HeroCard hero={hero}></HeroCard>
               </Grid>
