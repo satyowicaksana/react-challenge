@@ -1,9 +1,10 @@
 import React from 'react';
 import Container from '@material-ui/core/Container'
+import { useSelector } from 'react-redux'
 import './InfoBanner.css'
 
-export default (props) => {
-  const { hero } = props
+export default () => {
+  const hero = useSelector(state => state.hero)
   return (
     <div className="info-banner">
       <Container maxWidth="lg">

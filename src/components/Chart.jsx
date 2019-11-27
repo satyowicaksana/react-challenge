@@ -6,14 +6,6 @@ defaults.global.defaultFontFamily = 'Russo One';
 defaults.global.defaultFontSize = 10;
 
 class Chart extends Component{
-  constructor(props){
-    super(props);
-    this.state = {
-      chartData:props.chartData
-    }
-    console.log(defaults.global)
-  }
-
   static defaultProps = {
     displayTitle:true
   }
@@ -21,7 +13,7 @@ class Chart extends Component{
   render(){
     return (
       <Radar
-        data={this.state.chartData}
+        data={this.props.chartData}
         options={{
           title:{
             display:this.props.displayTitle,

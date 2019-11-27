@@ -6,22 +6,11 @@ import InfoPower from './InfoPower'
 import './InfoContent.css'
 import Chart from './Chart'
 class InfoContent extends Component {
-  constructor(){
-    super();
-    this.state = {
-      chartData:{}
-    }
-  }
-
-  UNSAFE_componentWillMount(){
-    this.getChartData();
-  }
-
-  getChartData(){
+  getChartData = () => {
     const { hero } = this.props
+    console.log(hero.powerstats, 'POWERSTATS')
     // Ajax calls here
-    this.setState({
-      chartData:{
+    return {
         labels: ['COMBAT', 'DURABILITY', 'INTELLIGENCE', 'POWER', 'SPEED', 'STRENGTH'],
         datasets:[
           {
@@ -46,7 +35,6 @@ class InfoContent extends Component {
           }
         ]
       }
-    });
   }
 
   render() {
@@ -65,7 +53,7 @@ class InfoContent extends Component {
           </Grid>
         </Grid>
         <div className="chart-container">
-        <Chart chartData={this.state.chartData} location="Massachusetts" legendPosition="bottom"/>
+        <Chart chartData={this.getChartData()} location="Massachusetts" legendPosition="bottom"/>
         </div>
       </div>
     )
