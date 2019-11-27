@@ -2,6 +2,7 @@ import React, { Component } from 'react'
 import Container from '@material-ui/core/Container'
 import HeroCard from '../components/HeroCard'
 import InfoContent from '../components/InfoContent'
+import InfoBanner from '../components/InfoBanner'
 import {
   withRouter
 } from 'react-router-dom'
@@ -44,16 +45,7 @@ class Info extends Component {
     }
     return (
       <>
-        <div className="info-banner">
-          <Container maxWidth="lg">
-            <div className="info-hero-full-name">
-              { hero.biography.fullName }
-            </div>
-            <div className="info-hero-name">
-              { hero.name.toUpperCase() }
-            </div>
-          </Container>
-        </div>
+        <InfoBanner hero={hero}></InfoBanner>
         <div className="info-content">
           <Container maxWidth="lg">
             <div className="info-hero-card">

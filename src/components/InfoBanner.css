@@ -1,0 +1,20 @@
+.info-banner {
+  height: 320px;
+  position: absolute;
+  width: 100%;
+  background: linear-gradient(90deg, rgba(55,121,139,1) 0%, rgba(48,87,125,1) 48%, rgba(34,45,92,1) 100%);
+}
+.banner-content-name {
+  margin-top: 100px;
+  position: absolute;
+  z-index: 1;
+}
+.banner-image-container {
+  text-align: right;
+}
+.banner-image {
+  height: 250px;
+  margin-top: 30px;
+  position: relative;
+  opacity: 0.5;
+}

@@ -2,6 +2,7 @@
   --background-color: #20222A;
   --surface-color: #282C33;
   --primary-color: #61DAFB;
+  --primary-color-gradient: linear-gradient(90deg, rgba(97,251,238,1) 0%, rgba(97,218,251,1) 12%, rgba(97,169,251,1) 100%);
 }
 
 html, body {
@@ -22,4 +23,7 @@ html, body {
 
 .t-primary {
   color: var(--primary-color);
+}
+.clickable {
+  cursor: pointer;
 }

@@ -2,7 +2,10 @@
   background: rgb(17, 18, 22);
   font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif !important;
 }
-
+.text-logo {
+  font-size: 27px;
+  color: #A7C6D9;
+}
 .logo {
   height: 50px;
   padding: 10px;

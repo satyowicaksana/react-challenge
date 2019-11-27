@@ -15,10 +15,7 @@ class Chart extends Component{
   }
 
   static defaultProps = {
-    displayTitle:true,
-    displayLegend: true,
-    legendPosition:'right',
-    location:'City'
+    displayTitle:true
   }
 
   render(){
@@ -26,6 +23,11 @@ class Chart extends Component{
       <Radar
         data={this.state.chartData}
         options={{
+          title:{
+            display:this.props.displayTitle,
+            text: 'Enhanced Ability Evaluation',
+            fontSize:20
+          },
           legend:{
             display: null,
             position:this.props.legendPosition,

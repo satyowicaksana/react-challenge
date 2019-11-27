@@ -10,34 +10,34 @@ export default (props) => {
       <TitleBadge title={'APPEARANCE'}></TitleBadge>
       </div>
       <Grid container>
-        <Grid item lg={3}>
+        <Grid item lg={3} md={3} xs={3}>
           Eye Color
         </Grid>
-        <Grid item lg={9}>
+        <Grid item lg={9} md={9} xs={9}>
           : {hero.appearance.eyeColor}
         </Grid>
-        <Grid item lg={3}>
+        <Grid item lg={3} md={3} xs={3}>
           Gender
         </Grid>
-        <Grid item lg={9}>
+        <Grid item lg={9} md={9} xs={9}>
           : {hero.appearance.gender}
         </Grid>
-        <Grid item lg={3}>
+        <Grid item lg={3} md={3} xs={3}>
           Hair Color
         </Grid>
-        <Grid item lg={9}>
+        <Grid item lg={9} md={9} xs={9}>
           : {hero.appearance.hairColor}
         </Grid>
-        <Grid item lg={3}>
+        <Grid item lg={3} md={3} xs={3}>
           Height
         </Grid>
-        <Grid item lg={9}>
+        <Grid item lg={9} md={9} xs={9}>
           : {hero.appearance.height.join(' / ')}
         </Grid>
-        <Grid item lg={3}>
+        <Grid item lg={3} md={3} xs={3}>
           Weight
         </Grid>
-        <Grid item lg={9}>
+        <Grid item lg={9} md={9} xs={9}>
           : {hero.appearance.weight.join(' / ')}
         </Grid>
       </Grid>

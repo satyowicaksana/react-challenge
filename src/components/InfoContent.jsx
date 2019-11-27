@@ -13,7 +13,7 @@ class InfoContent extends Component {
     }
   }
 
-  componentWillMount(){
+  UNSAFE_componentWillMount(){
     this.getChartData();
   }
 
@@ -25,7 +25,7 @@ class InfoContent extends Component {
         labels: ['COMBAT', 'DURABILITY', 'INTELLIGENCE', 'POWER', 'SPEED', 'STRENGTH'],
         datasets:[
           {
-            label:'Power Stat',
+            label:'Stat',
             data:[
               hero.powerstats.combat,
               hero.powerstats.durability,
@@ -53,12 +53,15 @@ class InfoContent extends Component {
     const { hero } = this.props
     return (
       <div>
-        <Grid container>
+        <Grid container spacing={3}>
           <Grid item lg={4}>
             <InfoAppearance hero={hero}></InfoAppearance>
           </Grid>
           <Grid item lg={4}>
             <InfoBiography hero={hero}></InfoBiography>
+          </Grid>
+          <Grid item lg={4}>
+            <InfoPower hero={hero}></InfoPower>
           </Grid>
         </Grid>
         <div className="chart-container">
