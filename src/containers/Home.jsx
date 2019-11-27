@@ -13,8 +13,12 @@ const Home = () => {
   const dispatch = useDispatch()
 
   useEffect(() => {
-    dispatch(fetchHeroes())
-  }, [dispatch])
+    if(heroes.length === 0) {
+      dispatch(fetchHeroes())
+    } else {
+      setDisplayedHeroes(heroes)
+    }
+  }, [heroes, dispatch])
 
   const filterHeroes = (keyword) => {
     let result = []
@@ -37,7 +41,7 @@ const Home = () => {
         <SearchForm filterHeroes={filterHeroes}></SearchForm>
         <Grid className="heroes-container" container spacing={3}>
           {
-            heroes.map(hero => (
+            displayedHeroes.map(hero => (
               <Grid key={hero.id} item lg={2} md={3} xs={6} >
                 <HeroCard hero={hero}></HeroCard>
               </Grid>
