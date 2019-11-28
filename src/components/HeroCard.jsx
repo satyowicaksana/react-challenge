@@ -22,7 +22,6 @@ export default function MediaCard(props) {
   const history = useHistory()
 
   const toInfo = (slug) => {
-    console.log(slug)
     history.push(`/${slug}`)
   }
 

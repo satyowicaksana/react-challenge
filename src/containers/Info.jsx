@@ -3,6 +3,7 @@ import Container from '@material-ui/core/Container'
 import HeroCard from '../components/HeroCard'
 import InfoContent from '../components/InfoContent'
 import InfoBanner from '../components/InfoBanner'
+import ReactLoading from 'react-loading'
 import { connect } from 'react-redux'
 import { fetchHero } from '../store/actions'
 
@@ -36,14 +37,10 @@ class Info extends Component {
     if(!hero) {
       return (
         <>
-          <div className="info-banner">
+          <InfoBanner></InfoBanner>
+          <div className="info-content">
             <Container maxWidth="lg">
-              Loading
-            </Container>
-          </div>
-          <div>
-            <Container maxWidth="lg">
-              This is info page
+              <ReactLoading className="home-loading" type={'spinningBubbles'} color={'#61DAFB'} height={100} width={100} />
             </Container>
           </div>
         </>

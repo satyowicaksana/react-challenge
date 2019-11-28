@@ -7,7 +7,6 @@ export default (props) => {
   const [abilities, setAbilities] = useState([])
 
   useEffect(() => {
-    console.log(hero.powerstats)
     let stats = Object.values(hero.powerstats);
     let max = Math.max(...stats);
     let result = []
@@ -16,7 +15,6 @@ export default (props) => {
         result.push(ability)
       }
     }
-    console.log(result)
     setAbilities(result)
   }, [hero.powerstats])
 

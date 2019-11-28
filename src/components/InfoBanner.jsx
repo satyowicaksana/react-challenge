@@ -10,10 +10,10 @@ export default () => {
       <Container maxWidth="lg">
         <div className="banner-content-name">
           <div className="info-hero-full-name">
-            { hero.biography.fullName }
+            { hero && hero.biography.fullName}
           </div>
           <div className="info-hero-name">
-            { hero.name.toUpperCase() }
+            { hero && hero.name.toUpperCase() }
           </div>
         </div>
         <div className="banner-image-container">

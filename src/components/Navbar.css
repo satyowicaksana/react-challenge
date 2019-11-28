@@ -1,10 +1,10 @@
 .toolbar {
   background: rgb(17, 18, 22);
-  font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif !important;
 }
 .text-logo {
-  font-size: 27px;
+  font-size: 22px;
   color: #A7C6D9;
+  margin-top: 20px;
 }
 .logo {
   height: 50px;
@@ -21,5 +21,6 @@
   font-weight: bold;
 }
 .navbar-button {
+  margin-top: 20px !important;
   color: #A7C6D9 !important;
 }

@@ -1,13 +1,9 @@
-import React, { useState, useEffect } from 'react'
+import React, { useState } from 'react'
 import TextField from '@material-ui/core/TextField'
 import './SearchForm.css'
 
 export default (props) => {
   const [nameInput, setNameInput] = useState('')
-
-  useEffect(() => {
-    console.log(nameInput)
-  }, [nameInput])
 
   const handleChange = (e) => {
     setNameInput(e.target.value)

@@ -8,7 +8,6 @@ import Chart from './Chart'
 class InfoContent extends Component {
   getChartData = () => {
     const { hero } = this.props
-    console.log(hero.powerstats, 'POWERSTATS')
     // Ajax calls here
     return {
         labels: ['COMBAT', 'DURABILITY', 'INTELLIGENCE', 'POWER', 'SPEED', 'STRENGTH'],

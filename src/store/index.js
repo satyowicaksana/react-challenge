@@ -5,12 +5,12 @@ const initialHero = { heroes: [], hero: null }
 
 function hero(state = initialHero, action) {
   switch (action.type) {
-    case 'FETCH_HEROES':
+    case 'SET_HEROES':
       return {
         ...state,
         heroes: action.heroes
       }
-    case 'FETCH_HERO':
+    case 'SET_HERO':
       return {
         ...state,
         hero: action.hero
